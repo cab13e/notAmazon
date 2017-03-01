@@ -1,6 +1,6 @@
 <?php
 session_start();
-$link = new mysqli("localhost","root", "password", "stories");
+$link = new mysqli("localhost","root", "password", "copter");
 if ($link->connect_errno) 
 {
     printf("Connect failed: %s\n", $link->connect_error);
@@ -27,7 +27,8 @@ if ($link->connect_errno)
 	</header>
 
 	<div>
-		
+		<h1>New additions to the store!</h1>
+
 	</div>
 
 	
