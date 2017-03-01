@@ -83,7 +83,7 @@ elseif ($action == "login") {
 	}
 	else 
 	{
-		echo('<script>alert("Incorrect username");</script>)');
+		echo('<script>alert("Incorrect username");</script>');
 	}
 }
 ?>
