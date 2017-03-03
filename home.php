@@ -23,6 +23,7 @@ if ($link->connect_errno)
                 <a style="text-align:left;position:relative;padding-right: 10px;" href="cart.php"><button id="linker" class="button button1">View cart</button></a>
                 <a style="text-align:left;position:relative;padding-right: 10px;" href="drones.php"><button id="linker" class="button button2">Shop All Drones</button></a>
                 <a style="text-align:left;position:relative;padding-right: 10px;" href="logout.php"><button id="linker" class="button button3">Logout</button></a>
+             
 			</div> <br/>
 		</nav>
 	</header>
