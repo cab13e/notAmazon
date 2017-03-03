@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 * Database Connections
 *
 ***************************/
-$link = new mysqli("localhost","root", "", "user_db");
+$link = new mysqli("localhost","root", "password", "user_db");
 
 
 if ($link->connect_errno) {

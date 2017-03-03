@@ -83,14 +83,29 @@ $(document).ready(function(){
 		<nav id="navbar">
 			<div class="two-thirds1 column" id="main">
 				<h1 id="welcome">Welcome!</h1>
-				<a style="text-align:left;position:relative;padding-right: 10px;" href="cart.php"><h3 id="linker">View cart</h3></a>
-				<a style="text-align:left;position:relative;padding-right: 10px;" href="drones.php"><h3 id="linker">Shop all drones</h3></a>
-				<a style="text-align:right;position:relative;" class="pull-right" href="logout.php"><h3 id="linker">Logout<h3></a> <br/>
+				<a style="text-align:left;position:relative;padding-right: 10px;" href="home.php"><button id="linker" class="button button1">Home</button></a>
+                <a style="text-align:left;position:relative;padding-right: 10px;" href="drones.php"><button id="linker" class="button button2">Shop All Drones</button></a>
+                <a style="text-align:left;position:relative;padding-right: 10px;" href="logout.php"><button id="linker" class="button button3">Logout</button></a>
+				<a href="#" class="cart-box" id="cart-info" title="View Cart">
+
+    <?php
+    if(isset($_SESSION["products"])){
+        echo count($_SESSION["products"]);
+    }else{
+        echo 0;
+    }?>
+
+<div class="shopping-cart-box">
+<a href="#" class="close-shopping-cart-box" >Close</a>
+<h3>Your Shopping Cart</h3>
+    <div id="shopping-cart-results">
+    </div>
+</div>
 			</div> <br/>
 		</nav>
 	</header>
 
-
+<!--
     <a href="#" class="cart-box" id="cart-info" title="View Cart">
     <?php
     if(isset($_SESSION["products"])){
@@ -99,18 +114,17 @@ $(document).ready(function(){
         echo 0;
     }?>
 
-    <div class="shopping-cart-box">
+<div class="shopping-cart-box">
 <a href="#" class="close-shopping-cart-box" >Close</a>
 <h3>Your Shopping Cart</h3>
     <div id="shopping-cart-results">
     </div>
-</div>
+</div>-->
 
+<?php
+$results = $mysqli_conn->query('SELECT * from table_1');
 
-    <?php
-    $results = $mysqli_conn->query('SELECT * from table_1');
-
-    $products_list =  '<ul class="products-wrp">';
+$products_list =  '<ul class="products-wrp">';
 
 while($row = $results->fetch_assoc()) {
 $products_list .= <<<EOT
