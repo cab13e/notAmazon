@@ -1,4 +1,5 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Trocchi);
+@import url(http://fonts.googleapis.com/css?family=Trocchi);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 body {
   background-color: #90908c;
@@ -27,6 +28,7 @@ form {
   color: #fff;
   overflow: hidden;}
 
+
 .t-thirds1 {
   background-color: mediumseagreen;
   border: 12px solid #fff;
@@ -50,7 +52,7 @@ form {
 }
 
 .one-third {width: 268px;}
-.two-thirds {width: 530px;}
+.two-thirds{width: 530px;}
 .one-third fieldset {border: none; margin: 0.5em;}
 .two-thirds fieldset {border: none; margin: 2.5em;}
 
@@ -99,6 +101,7 @@ legend {
   color: #fff;}
 .one-third legend { top: -0.2em; left: -0.6em;}
 .two-thirds legend { top: -1em; left: -1em;}
+
 
 label {width: 100%; display: block;}
 label[for="parentsConsent"], label[for="showPwd"], label[for="search"], label[for="print"], label[for="other"], label[for="parents-consent"] {display: inline;}
@@ -191,4 +194,52 @@ textarea + span.error, #bio-count {margin: 0;}
 /* needed to override default style sheet of number polyfill */
 div.number-spin-btn-container {
   margin-bottom: 1.6em !important; }
+
+.button {
+    background-color: green; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+}
+
+.button3:hover {
+    background-color: #f44336;
+    color: white;
+}
 

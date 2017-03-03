@@ -1,6 +1,6 @@
 <?php
 session_start();
-$link = new mysqli("localhost","root", "password", "quadcopters");
+$link = new mysqli("localhost","root", "", "quadcopters");
 if ($link->connect_errno) 
 {
     printf("Connect failed: %s\n", $link->connect_error);
