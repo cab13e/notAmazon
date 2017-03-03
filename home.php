@@ -83,7 +83,7 @@ $(document).ready(function(){
 				<a href="#" class="cart-box" id="cart-info" title="View Cart">
 					<?php
 					if(isset($_SESSION["products"])){
-						echo ("Cart")S;
+						echo ("Cart");
 					}else{
 						echo 0;
 					}?>
