@@ -1,6 +1,6 @@
 <?php
 session_start();
-$link = new mysqli("localhost","root", "password", "quadcopters");
+$link = new mysqli("localhost","root", "", "quadcopters");
 if ($link->connect_errno) 
 {
     printf("Connect failed: %s\n", $link->connect_error);
@@ -79,10 +79,11 @@ $(document).ready(function(){
                 <a style="text-align:left;position:relative;padding-right: 10px;" href="home.php"><button id="linker" class="button button1">Home</button></a>
                 <a style="text-align:left;position:relative;padding-right: 10px;" href="drones.php"><button id="linker" class="button button2">Shop All Drones</button></a>
                 <a style="text-align:left;position:relative;padding-right: 10px;" href="logout.php"><button id="linker" class="button button3">Logout</button></a>
+                
 				<a href="#" class="cart-box" id="cart-info" title="View Cart">
 					<?php
 					if(isset($_SESSION["products"])){
-						echo count($_SESSION["products"]);
+						echo ("Cart");
 					}else{
 						echo 0;
 					}?>

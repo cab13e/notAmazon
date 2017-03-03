@@ -90,7 +90,7 @@ $(document).ready(function(){
 
     <?php
     if(isset($_SESSION["products"])){
-        echo count($_SESSION["products"]);
+        echo ("Cart");
     }else{
         echo 0;
     }?>

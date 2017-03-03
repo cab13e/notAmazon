@@ -1,6 +1,6 @@
 <?php
 $db_username        = 'root'; //MySql database username
-$db_password        = 'password'; //MySql dataabse password
+$db_password        = ''; //MySql dataabse password
 $db_name            = 'quadcopters'; //MySql database name
 $db_host            = 'localhost'; //MySql hostname or IP
 
