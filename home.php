@@ -1,18 +1,13 @@
 <?php
 session_start();
-$link = new mysqli("localhost","root", "", "quadcopters");
-if ($link->connect_errno) 
-{
-    printf("Connect failed: %s\n", $link->connect_error);
-    exit();
-}
+include("config.inc.php");
 ?>
 
 
 <html>
 <head>
 <title> Home </title>
-<link href="StyleSheet.css" rel="stylesheet"/>
+<link href="StyleSheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <script type="text/javascript" src="jquery-1.11.2.min.js"></script></head>
 <script>
@@ -100,14 +95,63 @@ $(document).ready(function(){
 
 	<div class="two-thirds1 column" id="main" style="background-color: steelblue">
 		<h1>New additions to the store!</h1>
-			<?php 
-				$result = $link->query('SELECT * from table_1 where model = "Mavic"'); //"Mavic"
-				$row = $result->fetch_assoc();
-				echo ('<header><strong><h4>' . $row["model"] . '</h4></strong>');
-				echo ('<div><img src = "' . $row["image"] . '"></div>');
-				echo ('<div style="margin-top: 20px">Price: $' .  $row["msrp"] . '</div>');
-				echo ('</header>');
-			?>
+<?php 				
+$results = $mysqli_conn->query('SELECT * from table_1 where model = "Mavic"');
+
+$products_list =  '<ul class="products-wrp">';
+
+while($row = $results->fetch_assoc()) {
+$products_list .= <<<EOT
+<li>
+<form class="form-item" style="color:black">
+<h3>{$row["model"]}</h3>
+<h4>{$row["vendor"]}</h4>
+<p>
+    <strong>Size: </strong> {$row["size"]} mm
+    <strong>Weight: </strong>  {$row["weight"]} grams
+    <strong>Flight time: </strong>  {$row["flight_time"]} minutes
+    <strong>Range: </strong>  {$row["distance"]} km
+    <strong>Speed: </strong>  {$row["speed"]} km/h
+    <strong>Gimbal: </strong>  {$row["gimbal"]}
+    <strong>Video: </strong>  {$row["video"]}
+    <strong>Camera: </strong>  {$row["camera"]}
+    <strong>Additional features: </strong>  {$row["features"]}
+</p>
+<p>Customer Reviews: </br>
+{$row["reviews"]}
+</p>
+<div><img src="{$row["image"]}"></div>
+<div>Price : {$row["msrp"]}<div>
+<div class="item-box">
+	<div>
+    Qty :
+    <select name="product_qty">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select>
+	</div>
+	
+    <input name="sku" type="hidden" value="{$row["sku"]}">
+    <button type="submit">Add to Cart</button>
+    <button type="submit" action="wish" id="wishlist">Add to Wishlist</button>
+    </br>
+    <form action="addReview" name="addReview"> 
+        Review: <input type="text" name="review">
+        <input type="hidden" name="action" value="addReview" />
+        <input type="Submit">
+    </form>
+</div>
+</form>
+</li>
+EOT;
+
+}
+$products_list .= '</ul></div>';
+echo $products_list;
+?>
 	</div>
 
 </body>
