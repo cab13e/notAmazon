@@ -1,0 +1,5 @@
+Statement of work
+
+Collin did the majority of the php and html programming.
+
+Holly did the all of the css and layout of the site.

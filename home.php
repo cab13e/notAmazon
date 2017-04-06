@@ -80,7 +80,7 @@ $(document).ready(function(){
 					if(isset($_SESSION["products"])){
 						echo ("Cart");
 					}else{
-						echo 0;
+						echo("Cart");
 					}?>
 
 				<div class="shopping-cart-box">
@@ -116,33 +116,11 @@ $products_list .= <<<EOT
     <strong>Video: </strong>  {$row["video"]}
     <strong>Camera: </strong>  {$row["camera"]}
     <strong>Additional features: </strong>  {$row["features"]}
-</p>
-<p>Customer Reviews: </br>
-{$row["reviews"]}
-</p>
 <div><img src="{$row["image"]}"></div>
 <div>Price : {$row["msrp"]}<div>
-<div class="item-box">
-	<div>
-    Qty :
-    <select name="product_qty">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    </select>
-	</div>
-	
     <input name="sku" type="hidden" value="{$row["sku"]}">
     <button type="submit">Add to Cart</button>
     <button type="submit" action="wish" id="wishlist">Add to Wishlist</button>
-    </br>
-    <form action="addReview" name="addReview"> 
-        Review: <input type="text" name="review">
-        <input type="hidden" name="action" value="addReview" />
-        <input type="Submit">
-    </form>
 </div>
 </form>
 </li>

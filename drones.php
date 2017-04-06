@@ -20,7 +20,7 @@ if($action == "addReview")
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>products page</title>
-<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<link href="StyleSheet.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery-1.11.2.min.js"></script></head>
 <script>
 $(document).ready(function(){
@@ -92,7 +92,7 @@ $(document).ready(function(){
     if(isset($_SESSION["products"])){
         echo ("Cart");
     }else{
-        echo 0;
+        echo("Cart");
     }?>
 
 <div class="shopping-cart-box">
